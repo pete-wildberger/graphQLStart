@@ -16,7 +16,7 @@ const schema = new gql.GraphQLSchema({
       // if we want to get our message
       // just as a string
       message: {
-        type: gql.GraphQLString,
+        type: new gql.GraphQLNonNull(gql.GraphQLString),
         resolve() {
           return messageAsString;
         }
@@ -30,7 +30,7 @@ const schema = new gql.GraphQLSchema({
           name: 'messageObject',
           fields: {
             hello: {
-              type: gql.GraphQLString
+              type: new gql.GraphQLNonNull(gql.GraphQLString)
             }
           }
         }),
