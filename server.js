@@ -4,9 +4,9 @@ const graphqlHTTP = require('express-graphql');
 const app = express();
 const PORT = 8080;
 
-const messageAsString = 'Hello World';
+const messageAsString = 'World';
 const messageAsObject = {
-  message: 'Hello, world!'
+  hello: messageAsString
 };
 
 const schema = new gql.GraphQLSchema({
@@ -29,7 +29,7 @@ const schema = new gql.GraphQLSchema({
         type: new gql.GraphQLObjectType({
           name: 'messageObject',
           fields: {
-            message: {
+            hello: {
               type: gql.GraphQLString
             }
           }
